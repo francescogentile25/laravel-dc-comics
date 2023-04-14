@@ -134,6 +134,7 @@ class ComicsSeeder extends Seeder
             $c->price = $comic['price'];
             $c->series = $comic['series'];
             $c->sale_date = $comic['sale_date'];
+            $c->type = $comic['type'];
             $c->save();
         }
     }
