@@ -11,9 +11,10 @@ class PageController extends Controller
     public function homepage()
     {
         $comics = Comic::all();
-        $data = [
-            'comics' => $comics
-        ];
+        // $data = [
+        //     'comics' => $comics
+        // ];
+        $data = compact('comics');
         return view('comics.index', $data);
     }
 }
