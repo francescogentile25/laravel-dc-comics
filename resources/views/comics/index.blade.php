@@ -8,6 +8,7 @@
                     <div class="card-body">
                         <p class="card-text"> $ {{ $comic->price }}</p>
                     </div>
+                    <a class="btn btn-primary" href="{{ route('comics.edit', $comic) }}">Modifica</a>
                 </div>
             </a>
         @endforeach
