@@ -9,6 +9,7 @@
                 <p>{!! $comic->description !!}</p>
                 <p class="badge rounded-pill text-bg-primary fs-6">{{ $comic->series }}</p>
                 <span class="badge rounded-pill text-bg-success fs-6">{{ $comic->type }}</span>
+                <a class="btn btn-danger rounded-pill fs-6" href="{{ route('comics.edit', $comic) }}">Modifica</a>
 
             </div>
         </div>
