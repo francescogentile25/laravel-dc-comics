@@ -28,3 +28,10 @@ Route::post('/comics/store', [ComicController::class, 'store'])->name('comics.st
 Route::get('/comics/{comic}/edit', [ComicController::class, 'edit'])->name('comics.edit');
 Route::put('/comics/{comic}', [ComicController::class, 'update'])->name('comics.update');
 Route::delete('/comics/{comic}', [ComicController::class, 'destroy'])->name('comics.destroy');
+
+// Route::resource('comics', ComicController::class); mi permette di fare in automatico tutte le rotte che stanno sopra min 28 
+//migration ->seeder-> controller -> registrare rotte  
+// per creare tutti i file php artisan make:model Comic -a
+// nel controller che crea nella sezione store e update devosostituire ad UpdateComicRequest Request ed importarla sopra
+// se ho più seeder invece di invocarli uno per uno uso DatabaseSeeder     min -29  80b
+// per buttare giu le tabelle  ricrearle e rilanciare databaseSeeder lancioda terminale php artisan migrate:fresh --seed
