@@ -65,9 +65,21 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="type" class="form-label">tipo</label>
+                {{-- <label for="type" class="form-label">tipo</label>
                 <input type="text" class="form-control @error('type') is-invalid @enderror" id="type" name="type"
                     value="{{ old('type', $comic->type) }}">
+                @error('type')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror --}}
+                <label for="type" class="form-label ">tipo</label>
+                <select class="form-select @error('type') is-invalid @enderror" name="type" id="type"
+                    aria-label="Default select example">
+                    <option selected>Seleziona un tipo</option>
+                    <option @selected(old('type', $comic->type) == 'comic book') value="comic book">comic book</option>
+                    <option @selected(old('type', $comic->type) == 'graphic novel') value="graphic novel">graphic novel</option>
+                </select>
                 @error('type')
                     <div class="invalid-feedback">
                         {{ $message }}
